@@ -19,12 +19,12 @@ namespace AbstractFactoryDP
                 "city-3645", "national-6725" , "chase-897"
             };
 
-            for (int i = 0; i < accountNumbers.Count; i++)
+            foreach (var t in accountNumbers)
             {
-                ACreditUnionFactory abstractFactory = CreditUnionFactoryProvider.GetCreditUnionFactory(accountNumbers[i]);
+                ACreditUnionFactory abstractFactory = CreditUnionFactoryProvider.GetCreditUnionFactory(t);
                 if (abstractFactory == null)
                 {
-                    Console.WriteLine($"sorry account number is invalid :{accountNumbers[i]}");
+                    Console.WriteLine($"sorry account number is invalid :{t}");
                 }
                 else
                 {
